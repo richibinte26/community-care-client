@@ -83,7 +83,7 @@ export default function Footer() {
 
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-5 text-sm sm:flex-row">
-          <p>© {new Date().getFullYear()} Community Care. All rights reserved.</p>
+          <p>© 2026 Community Care. All rights reserved.</p>
           <p>Made with care in Dhaka, Bangladesh.</p>
         </div>
       </div>

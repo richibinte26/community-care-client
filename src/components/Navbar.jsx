@@ -10,7 +10,7 @@ import { publicLinks, privateLinks } from "@/lib/nav-links";
 import { cn } from "@/lib/utils";
 import Logo from "@/components/Logo";
 import UserMenu from "@/components/UserMenu";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
@@ -31,7 +31,7 @@ export default function Navbar() {
   function linkClass(href) {
     return cn(
       "text-sm font-medium transition-colors hover:text-primary",
-      pathname === href ? "text-primary" : "text-muted-foreground"
+      pathname === href ? "text-primary" : "text-muted-foreground",
     );
   }
 
@@ -42,15 +42,19 @@ export default function Navbar() {
 
         <nav className="hidden items-center gap-8 md:flex">
           {publicLinks.map((link) => (
-            <Link key={link.href} href={link.href} className={linkClass(link.href)}>
+            <Link
+              key={link.href}
+              href={link.href}
+              className={linkClass(link.href)}
+            >
               {link.label}
             </Link>
           ))}
         </nav>
 
         <div className="flex items-center gap-2">
-            <ThemeToggle />
-            
+          <ThemeToggle />
+
           {isPending ? (
             <div className="size-9 animate-pulse rounded-full bg-muted" />
           ) : user ? (
@@ -61,9 +65,9 @@ export default function Navbar() {
               </Button>
             </div>
           ) : (
-            <Button asChild size="sm">
-              <Link href="/login">Login</Link>
-            </Button>
+            <Link href="/login" className={buttonVariants({ size: "sm" })}>
+              Login
+            </Link>
           )}
 
           <Button
@@ -105,14 +109,18 @@ export default function Navbar() {
                     onClick={() => setOpen(false)}
                     className={cn(
                       "flex items-center gap-2 rounded-lg px-3 py-2",
-                      linkClass(link.href)
+                      linkClass(link.href),
                     )}
                   >
                     <link.icon className="size-4" />
                     {link.label}
                   </Link>
                 ))}
-                <Button variant="outline" className="mt-2" onClick={handleLogout}>
+                <Button
+                  variant="outline"
+                  className="mt-2"
+                  onClick={handleLogout}
+                >
                   <LogOut className="size-4" /> Logout
                 </Button>
               </>
