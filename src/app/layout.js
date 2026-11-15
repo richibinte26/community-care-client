@@ -2,6 +2,7 @@ import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -36,8 +37,10 @@ export default function RootLayout({ children }) {
         <Navbar />
         <main className="flex-1">{children}</main>
 
+        <Footer />
+
         <Toaster position="top-center" />
-        
+
       </body>
     </html>
   );
