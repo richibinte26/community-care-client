@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils";
 import Logo from "@/components/Logo";
 import UserMenu from "@/components/UserMenu";
 import { Button } from "@/components/ui/button";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -48,6 +49,8 @@ export default function Navbar() {
         </nav>
 
         <div className="flex items-center gap-2">
+            <ThemeToggle />
+            
           {isPending ? (
             <div className="size-9 animate-pulse rounded-full bg-muted" />
           ) : user ? (
