@@ -60,7 +60,12 @@ export default function Navbar() {
           ) : user ? (
             <div className="hidden items-center gap-3 md:flex">
               <UserMenu user={user} />
-              <Button variant="outline" size="sm" onClick={handleLogout}>
+              <Button
+                variant="outline"
+                size="sm"
+                className="text-foreground"
+                onClick={handleLogout}
+              >
                 Logout
               </Button>
             </div>
@@ -118,7 +123,7 @@ export default function Navbar() {
                 ))}
                 <Button
                   variant="outline"
-                  className="mt-2"
+                  className="mt-2 text-foreground"
                   onClick={handleLogout}
                 >
                   <LogOut className="size-4" /> Logout
