@@ -1,6 +1,7 @@
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
+import Navbar from "@/components/Navbar";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -30,11 +31,13 @@ export default function RootLayout({ children }) {
       className={`${inter.variable} ${jakarta.variable}`}
       suppressHydrationWarning
     >
-      <body>
-        
-        {children}
-        <Toaster position="top-center" />
+      <body className="flex min-h-screen flex-col">
 
+        <Navbar />
+        <main className="flex-1">{children}</main>
+
+        <Toaster position="top-center" />
+        
       </body>
     </html>
   );

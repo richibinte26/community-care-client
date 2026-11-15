@@ -28,7 +28,7 @@ export function validatePhotoUrl(url) {
 export function validatePassword(password) {
   if (!password) return "Password is required.";
   if (password.length < 6) return "Password must be at least 6 characters.";
-  if (!/[A-Z]/.test(password)) return "Password must have an uppercase letter.";
+//   if (!/[A-Z]/.test(password)) return "Password must have an uppercase letter.";
   if (!/[a-z]/.test(password)) return "Password must have a lowercase letter.";
   return "";
 }
