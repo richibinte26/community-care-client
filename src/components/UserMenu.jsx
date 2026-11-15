@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "../components/ui/avatar";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,8 +10,8 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { privateLinks } from "@/lib/nav-links";
+} from "../components/ui/dropdown-menu";
+import { privateLinks } from "../lib/nav-links";
 
 export default function UserMenu({ user }) {
   const initial = user.name?.charAt(0).toUpperCase() || "U";

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { HeartHandshake } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn } from "../lib/utils";
 
 export default function Logo({ className }) {
   return (

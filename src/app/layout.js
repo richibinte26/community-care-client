@@ -1,9 +1,9 @@
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import ThemeProvider from "@/components/ThemeProvider";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import ThemeProvider from "../components/ThemeProvider";
 
 const inter = Inter({
   subsets: ["latin"],

@@ -5,12 +5,12 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import { LogOut, Menu, X } from "lucide-react";
-import { authClient } from "@/lib/auth-client";
-import { publicLinks, privateLinks } from "@/lib/nav-links";
-import { cn } from "@/lib/utils";
-import Logo from "@/components/Logo";
-import UserMenu from "@/components/UserMenu";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { authClient } from "../lib/auth-client";
+import { publicLinks, privateLinks } from "../lib/nav-links";
+import { cn } from "../lib/utils";
+import Logo from "../components/Logo";
+import UserMenu from "../components/UserMenu";
+import { Button, buttonVariants } from "../components/ui/button";
 import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {

@@ -1,6 +1,7 @@
 
-import EventCard from "@/components/EventCard";
-import { getUpcomingEvents } from "@/lib/api";
+
+import EventCard from "../../components/EventCard";
+import { getUpcomingEvents } from "../../lib/api";
 
 export default async function EventsPage() {
   let events = [];

@@ -6,7 +6,7 @@ import {
   Card,
   CardContent,
   CardFooter,
-} from "@/components/ui/card";
+} from "../components/ui/card";
 
 export default function EventCard({ event }) {
   const eventId = event?._id || event?.id;

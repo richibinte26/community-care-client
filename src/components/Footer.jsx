@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { FaFacebookF, FaGithub, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
-import Logo from "@/components/Logo";
+import Logo from "../components/Logo";
 
 const quickLinks = [
   { href: "/", label: "Home" },
