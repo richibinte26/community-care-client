@@ -1,5 +1,6 @@
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -29,7 +30,12 @@ export default function RootLayout({ children }) {
       className={`${inter.variable} ${jakarta.variable}`}
       suppressHydrationWarning
     >
-      <body>{children}</body>
+      <body>
+        
+        {children}
+        <Toaster position="top-center" />
+
+      </body>
     </html>
   );
 }
