@@ -55,7 +55,7 @@ export default function LoginPage() {
       toast.error(error.message || "Could not log you in. Please try again.");
       return;
     }
-
+    toast.success("Welcome back! You are now logged in.");
     router.push("/");
     router.refresh();
   }

@@ -68,7 +68,7 @@ export default function RegisterPage() {
       toast.error(error.message || "Could not create your account. Please try again.");
       return;
     }
-
+    toast.success(`Welcome to Community Care, ${form.name.trim()}!`);
     router.push("/");
     router.refresh();
   }
