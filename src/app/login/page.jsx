@@ -18,6 +18,14 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
+
+function getRedirectPath() {
+  const redirect = new URLSearchParams(window.location.search).get("redirect");
+  return redirect && redirect.startsWith("/") && !redirect.startsWith("//")
+    ? redirect
+    : "/";
+}
+
 export default function LoginPage() {
   const router = useRouter();
   const [form, setForm] = useState({ email: "", password: "" });
@@ -56,14 +64,14 @@ export default function LoginPage() {
       return;
     }
     toast.success("Welcome back! You are now logged in.");
-    router.push("/");
+    router.push(getRedirectPath());
     router.refresh();
   }
 
   async function handleGithub() {
     const { error } = await authClient.signIn.social({
       provider: "github",
-      callbackURL: "/",
+      callbackURL: getRedirectPath(),
     });
     if (error) {
       toast.error(error.message || "GitHub login failed. Please try again.");
