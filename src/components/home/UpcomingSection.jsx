@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import EventCard from "@/components/EventCard";
 import { buttonVariants } from "@/components/ui/button";
+import { EventGridSkeleton } from "@/components/Skeletons";
 
 const API = process.env.NEXT_PUBLIC_API_URL;
 
@@ -40,9 +41,7 @@ export default function UpcomingSection() {
           </p>
         </div>
 
-        {status === "loading" && (
-          <p className="py-10 text-center text-muted-foreground">Loading events...</p>
-        )}
+        {status === "loading" && <EventGridSkeleton />}
 
         {status === "error" && (
           <p className="py-10 text-center text-muted-foreground">

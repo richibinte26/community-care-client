@@ -9,6 +9,7 @@ import { authClient } from "@/lib/auth-client";
 import { authFetch } from "@/lib/authFetch";
 import { getTodayString } from "@/lib/validators";
 import { buttonVariants } from "@/components/ui/button";
+import { GridPageSkeleton } from "@/components/Skeletons";
 
 function formatDate(value) {
   return new Date(value).toLocaleDateString("en-GB", {
@@ -51,7 +52,7 @@ export default function JoinedEventsPage() {
   }, [session]);
 
   if (isPending || !session || loading) {
-    return <p className="py-20 text-center text-muted-foreground">Loading...</p>;
+    return <GridPageSkeleton />;
   }
 
   const today = getTodayString();

@@ -9,6 +9,7 @@ import { Pencil, Trash2 } from "lucide-react";
 import { authClient } from "@/lib/auth-client";
 import { authFetch } from "@/lib/authFetch";
 import { Button, buttonVariants } from "@/components/ui/button";
+import { ListPageSkeleton } from "@/components/Skeletons";
 
 function formatDate(value) {
   return new Date(value).toLocaleDateString("en-GB", {
@@ -76,7 +77,7 @@ export default function ManageEventsPage() {
   }
 
   if (isPending || !session || loading) {
-    return <p className="py-20 text-center text-muted-foreground">Loading...</p>;
+    return <ListPageSkeleton />;
   }
 
   return (
