@@ -25,7 +25,7 @@ export default function EventCard({ event }) {
       : "Date to be announced";
 
   return (
-    <Card className="h-full rounded-2xl border border-border bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+    <Card className="relative  h-full rounded-2xl border border-border bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
       <div className="relative aspect-video w-full overflow-hidden bg-muted">
         {event?.thumbnail ? (
           <Image
