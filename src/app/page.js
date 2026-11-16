@@ -1,19 +1,16 @@
-import { Button } from "../components/ui/button";
+import Banner from "@/components/home/Banner";
+import Features from "@/components/home/Features";
+import Gallery from "@/components/home/Gallery";
+import Newsletter from "@/components/home/Newsletter";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <main className="mx-auto max-w-7xl px-4 py-16 md:py-20">
-      <h1 className="text-3xl md:text-4xl">Community Care</h1>
-      <p className="mt-2 text-muted-foreground">
-        Theme check for fonts, colors and buttons.
-      </p>
-      <div className="mt-8 flex gap-3">
-        <Button>Primary</Button>
-        <Button variant="outline">Secondary</Button>
-      </div>
-      <div className="mt-8 rounded-2xl border bg-card p-6 shadow-sm">
-        This card uses the surface color.
-      </div>
-    </main>
+    <>
+      <Banner />
+      <Features />
+      {/* Upcoming events section goes here in part 2 (C17) */}
+      <Gallery />
+      <Newsletter />
+    </>
   );
 }
