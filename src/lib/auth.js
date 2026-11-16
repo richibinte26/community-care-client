@@ -1,30 +1,41 @@
+
 import { betterAuth } from "better-auth";
 import { mongodbAdapter } from "@better-auth/mongo-adapter";
 import { jwt } from "better-auth/plugins";
 import { nextCookies } from "better-auth/next-js";
 import { MongoClient } from "mongodb";
 
-// Reuse one Mongo client in dev (hot reload would create many)
-const client = globalThis._mongoClient ?? new MongoClient(process.env.MONGODB_URI);
-if (process.env.NODE_ENV !== "production") {
-  globalThis._mongoClient = client;
+// Reuse MongoDB client in both development and production
+const globalForMongo = globalThis;
+
+const client =
+  globalForMongo._mongoClient ??
+  new MongoClient(process.env.MONGODB_URI);
+
+if (!globalForMongo._mongoClient) {
+  globalForMongo._mongoClient = client;
 }
+
 const db = client.db("community-care");
 
 export const auth = betterAuth({
   baseURL: process.env.BETTER_AUTH_URL,
   secret: process.env.BETTER_AUTH_SECRET,
+
   database: mongodbAdapter(db, { client }),
+
   emailAndPassword: {
     enabled: true,
     minPasswordLength: 6,
   },
+
   socialProviders: {
     github: {
       clientId: process.env.GITHUB_CLIENT_ID,
       clientSecret: process.env.GITHUB_CLIENT_SECRET,
     },
   },
+
   plugins: [
     jwt({
       jwt: {
@@ -35,6 +46,6 @@ export const auth = betterAuth({
         }),
       },
     }),
-    nextCookies(), // must be the LAST plugin
+    nextCookies(),
   ],
 });
