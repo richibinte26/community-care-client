@@ -1,5 +1,3 @@
-
-
 import EventCard from "../../components/EventCard";
 import { getUpcomingEvents } from "../../lib/api";
 
