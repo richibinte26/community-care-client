@@ -1,10 +1,10 @@
 const photos = [
   { src: "/gallery/g1.jpg", caption: "Winter clothes distribution" },
-  { src: "/gallery/g2.jpg", caption: "Tree plantation drive" },
-  { src: "/gallery/g3.jpg", caption: "Blood donation camp" },
-  { src: "/gallery/g4.jpg", caption: "Street cleanup day" },
-  { src: "/gallery/g5.jpg", caption: "Free health camp" },
-  { src: "/gallery/g6.jpg", caption: "Food distribution" },
+  { src: "/gallery/g2.jpg", caption: "Food distribution" },
+  { src: "/gallery/g3.jpg", caption: "Street cleanup day" },
+  { src: "/gallery/g4.jpg", caption: "Tree plantation drive" },
+  { src: "/gallery/g5.jpg", caption: "Blood donation camp" },
+  { src: "/gallery/g6.jpg", caption: "Teaching Children" },
 ];
 
 export default function Gallery() {
